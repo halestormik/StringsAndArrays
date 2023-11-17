@@ -30,7 +30,7 @@ public class StatsServiceTest {
 
         Assertions.assertEquals(expected, service.AverageSummPerMonth(sales));
         System.out.println("Средняя сумма продаж за месяц равна: " + service.AverageSummPerMonth(sales) + " руб.");
-        }
+    }
 
     @Test
     public void MonthWithMaxSumm() {
