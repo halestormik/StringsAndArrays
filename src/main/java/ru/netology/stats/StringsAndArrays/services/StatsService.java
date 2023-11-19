@@ -12,7 +12,7 @@ public class StatsService {
         return summary;
     }
 
-    public double AverageSummPerMonth(long[] sales) {
+    public double averageSummPerMonth(long[] sales) {
         return finalAmount(sales) / sales.length; // используем уже посчитанную в прошлом методе итоговую сумму
     }
 
@@ -40,22 +40,24 @@ public class StatsService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int countOfMonthBelowAverage (long[] sales){
+    public int countOfMonthBelowAverage(long[] sales) {
         int counter = 0;
+        double averageSumm = averageSummPerMonth(sales);
 
-        for (int i = 0; i < sales.length; i++){
-            if (sales[i] < AverageSummPerMonth(sales)) {
-            counter++;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] < averageSumm) {
+                counter++;
             }
         }
         return counter;
-        }
+    }
 
-    public int countOfMonthAboveAverage (long[] sales){
+    public int countOfMonthAboveAverage(long[] sales) {
         int counter = 0;
+        double averageSumm = averageSummPerMonth(sales);
 
-        for (int i = 0; i < sales.length; i++){
-            if (sales[i] > AverageSummPerMonth(sales)) {
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > averageSumm) {
                 counter++;
             }
         }
